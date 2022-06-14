@@ -28,7 +28,12 @@ public class PlayerController : MonoBehaviour {
                 rb.velocity = Vector3.up * descentForce;
             }
         }
-        
+        if(Input.GetKeyUp(KeyCode.DownArrow))
+            {
+            transform.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(0, 0.5f, 0);
+        }
+
 
         if (salto){
             if(Input.GetKey(KeyCode.Space)||Input.GetKey(KeyCode.UpArrow)){
@@ -38,11 +43,6 @@ public class PlayerController : MonoBehaviour {
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.localScale = new Vector3(1, 0.5f, 1);
                 transform.position = new Vector3(0, 0.25f, 0);
-            }
-            else if (Input.GetKeyUp(KeyCode.DownArrow))
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                transform.position = new Vector3(0, 0.5f, 0);
             }
         }
     }
